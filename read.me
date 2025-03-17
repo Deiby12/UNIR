@@ -1,0 +1,54 @@
+Generador de Tablas de Verdad
+Este proyecto implementa una aplicación en Python (usando tkinter y ttk) que:
+
+    1. Permite escribir una expresión lógica con las variables 
+    p,q,r,s.
+    2. Utiliza un parser recursivo para interpretar la expresión en un árbol sintáctico (AST).
+    3. Genera la tabla de verdad correspondiente, mostrando columnas para:
+    Cada variable (p,q,r,s).
+    Todas las subexpresiones derivadas del AST.
+    La expresión completa.
+    4. Indica si la expresión es una tautología, contradicción o contingencia.
+    Colorea las celdas con valor V en verde y las que tienen F en rojo, pero si la respuesta del enunciado final es F toda la fila se colocará de color roja y si la fila es V toda la fila se colocará de color rojo
+
+
+Características Principales
+Parser Recursivo:
+    Para evitar problemas con expresiones complejas (como -> o <-> dentro de paréntesis), se implementa un analizador sintáctico que respeta la precedencia y la estructura de la expresión.
+
+Interfaz Gráfica (GUI):
+Utiliza tkinter y ttk para mostrar una ventana con:
+    1. Un Entry donde introducir la expresión lógica.
+    2. Un Teclado Lógico con botones para insertar operadores y variables.
+    3. Un Treeview que muestra la tabla de verdad, con celdas coloreadas.
+
+Soporta Operadores:
+
+    Negación: ~ o !
+    Conjunción: ∧ (también &)
+    Disyunción: ∨ (también |)
+    XOR: ⊕ (también ^)
+    Condicional: -> o →
+    Bicondicional: <-> o ↔
+
+Restricción de Variables:
+
+Solo se permiten p, q, r, s. Si se detecta alguna otra variable, se muestra un mensaje de error.
+
+Requisitos
+
+1. Python 3.x (recomendado 3.7 o superior).
+2. Bibliotecas estándar de Python (no requiere instalación adicional):
+3. tkinter (ya viene con la mayoría de distribuciones de Python en Windows/Mac; en Linux podría requerir instalar python3-tk).
+
+Uso
+
+1. Clonar o descargar este repositorio.
+2. Asegúrate de tener Python 3 instalado.
+3. En la carpeta del proyecto, Ejecutar
+    (sustituyendo nombre_del_script.py por el archivo principal que contiene el código de la aplicación).
+4. Se abrirá una ventana con la interfaz gráfica.
+5. En el Entry principal, escribe tu expresión lógica. Por ejemplo:
+    (p->q) ∧ (r ∨ ~s)
+6. Pulsa el botón "Generar Tabla" para ver la tabla de verdad.
+7. Alternativamente, puedes pulsar el botón "Ejemplos" para escoger una expresión de muestra.
