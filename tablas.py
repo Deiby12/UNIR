@@ -55,7 +55,7 @@ class Parser:
       3) Conjunción (∧)
       4) Disyunción (∨)
       5) XOR (⊕)
-      6) Implicación (→)
+      6) Condicional (→)
       7) Bicondicional (↔)
     """
     def __init__(self, tokens):
@@ -99,7 +99,7 @@ class Parser:
     def parse_imp(self):
         """
         parse_imp := parse_xor (('→') parse_xor)*
-        (implicación es menor precedencia que XOR, AND, OR)
+        (condicional es menor precedencia que XOR, AND, OR)
         """
         left = self.parse_xor()
         while True:
@@ -310,7 +310,7 @@ class TruthTableGenerator:
             " - Negación: ~ o !\n"
             " - Conjunción: & o ∧  (internamente se convertirá en ∧)\n"
             " - Disyunción: | o ∨  (internamente se convertirá en ∨)\n"
-            " - Implicación: -> o →\n"
+            " - Condicional: -> o →\n"
             " - Bicondicional: <-> o ↔\n"
             " - XOR: ^ o ⊕\n\n"
             "Ejemplos:\n"
